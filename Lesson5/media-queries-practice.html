@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+    <style>
+        .block {
+            margin-bottom: 10px;
+        }
+
+        .block > div {
+            background: #00BCD4;
+            border: 1px solid #fff;
+            height: 150px;
+            color: #fff;
+            display: block;
+            width: 100%;
+        }
+
+        .inside {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .text {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+        }
+    </style>
+    <style>
+        .first
+        {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .first .colored
+        {
+            flex: 0 0 50%;
+            box-sizing: border-box;
+        }
+
+        .second
+        {
+            display: flex;
+        }
+
+        .second .colored
+        {
+            flex: 1 0 100px;
+            box-sizing: border-box;
+
+            /* min-width: 100px; */
+            /* max-width: 200px; */
+        }
+
+        @media (min-width: 768px) {
+            .fourth,
+            .fifth
+            {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .fourth .colored,
+            .fifth .colored
+            {
+                flex: 0 0 50%;
+                box-sizing: border-box;
+            }
+
+            /* 0, 3, 0 */
+            .fourth .colored:last-child,
+            .fifth .colored:last-child
+            {
+                /* flex-grow: 1; */
+                flex-basis: 100%;
+            }
+        }
+
+        @media (min-width: 960px) {
+            .third
+            {
+                display: flex;
+            }
+
+            .third .colored
+            {
+                flex: 1 0 0;
+                box-sizing: border-box;
+            }
+
+            .fourth
+            {
+                flex-wrap: nowrap;
+            }
+
+            /* 0, 3, 0 */
+            .fourth .colored.colored
+            {
+                flex: 1 0 0;
+            }
+
+            .fourth .colored:nth-child(2)
+            {
+                flex: 0 0 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h2>1 block</h2>
+    <div class="first block">
+        <div class="plain colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="plain colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+        <div class="plain colored">
+            <div class="inside">
+                <div class="text">3</div>
+            </div>
+        </div>
+        <div class="plain colored">
+            <div class="inside">
+                <div class="text">4</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>2 block</h2>
+    <div class="second block">
+        <div class="colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>3 block</h2>
+    <div class="third block">
+        <div class="colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">3</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>4 block</h2>
+    <div class="fourth block">
+        <div class="colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">3</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>5 block</h2>
+    <div class="fifth block">
+        <div class="colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">3</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">4</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">5</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
