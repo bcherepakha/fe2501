@@ -85,6 +85,7 @@ body
     left: 0;
     right: 0;
     /* width: 100%; */
+    z-index: 5;
 }
 
 .header__bg
@@ -115,4 +116,139 @@ body
     height: 100%;
     background: rgba(0, 0, 0, .5);
     z-index: 2;
+}
+
+
+.footer {
+    height: 300px;
+}
+
+.delivery-form
+{
+    width: 100%;
+    max-width: 730px;
+    margin: 0 auto;
+    padding: 85px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.delivery-form__title
+{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+    margin: 0 0 20px;
+}
+
+.delivery-form__description
+{
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #999999;
+
+    margin: 0 0 30px;
+}
+
+.delivery-form__content
+{
+    margin-bottom: 35px;
+
+    width: 100%;
+    max-width: 490px;
+    height: 45px;
+
+    display: flex;
+}
+
+.delivery-form__input-wrapper
+{
+    position: relative;
+
+    flex: 1 1 61.23%;
+
+    display: block;
+}
+
+.delivery-form__input
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border: 1px solid #F2F2F2;
+    box-shadow: 0px 0px 10px rgba(111, 111, 111, 0.25);
+    border-radius: 30px 0 0 30px;
+
+    padding: 0 10px 0 30px;
+
+    font-size: 13px;
+
+}
+
+.delivery-form__input:focus
+{
+    box-shadow: 0px 0px 10px rgba(73, 133, 255, 0.8);
+    outline: none;
+}
+
+.delivery-form__input:focus + .delivery-form__label
+{
+    top: -18px;
+}
+
+.delivery-form__label
+{
+    position: absolute;
+    top: 50%;
+    left: 33px;
+
+    font-size: 13px;
+    line-height: 21px;
+
+    color: #999999;
+
+    transform: translateY(-50%);
+
+    transition: top 1s ease-in-out 0s;
+}
+
+.delivery-form__submit
+{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 38.77%;
+
+    box-sizing: border-box;
+
+    background: #4985FF;
+    box-shadow: 0px 0px 10px rgba(111, 111, 111, 0.25);
+    border-radius: 0px 30px 30px 0px;
+
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.delivery-form__note
+{
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #999999;
+    margin: 0;
 }
