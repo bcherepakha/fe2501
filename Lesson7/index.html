@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7</title>
+    <!-- <script src="homework.js"></script> -->
+    <!-- <script src="task2.js"></script> -->
+    <style>
+        .switcher
+        {
+            position: relative;
+            display: inline-block;
+
+            width: 142px;
+            height: 76px;
+
+            box-sizing: border-box;
+        }
+
+        .switcher__input
+        {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+            clip: rect(0 0 0 0);
+
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+        }
+
+        .switcher__body
+        {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+            padding: 8px;
+
+            box-sizing: border-box;
+
+            background: linear-gradient(180deg, #F4F4F4 0%, #EBEBEB 3.89%, #E9E9E9 6.73%, #E1E1E1 9.69%, #DBDBDB 88.64%, #DDDDDD 92.5%, #D8D8D8 96.36%, #D1D1D1 100%);
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 0px 14px #ADADAD;
+            border-radius: 40px;
+        }
+
+        .switcher__body::before
+        {
+            content: '';
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+
+            background: #655466;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 40px;
+        }
+
+        .switcher__toggle
+        {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            display: block;
+
+            width: 70px;
+            height: 92.1052%;
+
+            box-sizing: border-box;
+            border-radius: 50%;
+
+            background: #FFFFFF;
+            box-shadow: -4px 4px 4px #949494, inset 0px -6px 9px #949494;
+        }
+
+        .switcher__toggle::before
+        {
+            content: '';
+
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+
+            border-radius: 50%;
+
+            background: #E4E4E4;
+            background-blend-mode: hue;
+            box-shadow: inset 3px 3px 9px rgba(87, 87, 87, 0.25);
+
+            z-index: 1;
+        }
+
+        .switcher__toggle-img
+        {
+            position: absolute;
+            top: 24px;
+            bottom: 26px;
+            left: 26px;
+            right: 26px;
+
+            z-index: 2;
+
+            stroke: #655466;
+        }
+
+        .switcher__input:checked + .switcher__body .switcher__toggle
+        {
+            left: calc(100% - 70px);
+        }
+
+        .switcher__input:checked + .switcher__body::before
+        {
+            background: #A220C3;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .switcher__input:checked + .switcher__body .switcher__toggle-img
+        {
+            stroke: #A220C3;
+        }
+
+    </style>
+</head>
+<body>
+    <label class="switcher">
+        <input type="checkbox" class="switcher__input" aria-label="Switcher" />
+        <span class="switcher__body">
+            <span class="switcher__toggle">
+
+                <svg viewBox="0 0 22 24" class="switcher__toggle-img" fill="none" aria-label="">
+                    <path d="M17.365 6.64001C18.6234 7.8988 19.4803 9.50246 19.8273 11.2482C20.1743 12.994 19.9959 14.8034 19.3146 16.4478C18.6334 18.0921 17.4798 19.4976 15.9998 20.4864C14.5199 21.4752 12.7799 22.0029 11 22.0029C9.2201 22.0029 7.48016 21.4752 6.00018 20.4864C4.5202 19.4976 3.36664 18.0921 2.68537 16.4478C2.00409 14.8034 1.82569 12.994 2.17272 11.2482C2.51975 9.50246 3.37663 7.8988 4.635 6.64001" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11.0049 2V12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+            </span>
+        </span>
+    </label>
+</body>
+</html>
