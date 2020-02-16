@@ -42,6 +42,10 @@
             background: linear-gradient(180deg, #F4F4F4 0%, #EBEBEB 3.89%, #E9E9E9 6.73%, #E1E1E1 9.69%, #DBDBDB 88.64%, #DDDDDD 92.5%, #D8D8D8 96.36%, #D1D1D1 100%);
             box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 0px 14px #ADADAD;
             border-radius: 40px;
+
+            cursor: pointer;
+
+            transition: box-shadow .4s ease-in-out;
         }
 
         .switcher__body::before
@@ -57,6 +61,9 @@
             background: #655466;
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 40px;
+
+            transition: all .8s ease-in-out;
+            will-change: background, box-shadow;
         }
 
         .switcher__toggle
@@ -75,6 +82,8 @@
 
             background: #FFFFFF;
             box-shadow: -4px 4px 4px #949494, inset 0px -6px 9px #949494;
+
+            transition: left .8s ease-in-out;
         }
 
         .switcher__toggle::before
@@ -107,6 +116,8 @@
             z-index: 2;
 
             stroke: #655466;
+
+            transition: stroke .8s ease-in-out;
         }
 
         .switcher__input:checked + .switcher__body .switcher__toggle
@@ -125,11 +136,39 @@
             stroke: #A220C3;
         }
 
+        .switcher__input:focus + .switcher__body
+        {
+            box-shadow: 0px 0px 10px rgb(5, 39, 156), inset 0px 0px 14px #ADADAD;
+        }
+
+        .switcher__input:disabled + .switcher__body::before
+        {
+            background: #b3afb3;
+        }
+
+        .switcher__input:disabled + .switcher__body .switcher__toggle-img
+        {
+            stroke: #b8b2b9;
+        }
     </style>
 </head>
 <body>
     <label class="switcher">
         <input type="checkbox" class="switcher__input" aria-label="Switcher" />
+        <span class="switcher__body">
+            <span class="switcher__toggle">
+
+                <svg viewBox="0 0 22 24" class="switcher__toggle-img" fill="none" aria-label="">
+                    <path d="M17.365 6.64001C18.6234 7.8988 19.4803 9.50246 19.8273 11.2482C20.1743 12.994 19.9959 14.8034 19.3146 16.4478C18.6334 18.0921 17.4798 19.4976 15.9998 20.4864C14.5199 21.4752 12.7799 22.0029 11 22.0029C9.2201 22.0029 7.48016 21.4752 6.00018 20.4864C4.5202 19.4976 3.36664 18.0921 2.68537 16.4478C2.00409 14.8034 1.82569 12.994 2.17272 11.2482C2.51975 9.50246 3.37663 7.8988 4.635 6.64001" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11.0049 2V12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+            </span>
+        </span>
+    </label>
+
+    <label class="switcher">
+        <input type="checkbox" class="switcher__input" aria-label="Switcher" disabled />
         <span class="switcher__body">
             <span class="switcher__toggle">
 
