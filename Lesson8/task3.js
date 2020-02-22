@@ -47,11 +47,24 @@ function factorial(n) {
 
 // console.log( rangeSum(1, 9) );
 
-for (let n=0; n<10; n++) {
-    console.log(n, factorial(n));
-}
+// for (let n=0; n<10; n++) {
+//     console.log(n, factorial(n));
+// }
 
 // Домашнее задание
 // f(0) = 8
 // f(1) = 12
 // f(n) = 2*f(n-1) + 3*f(n-2)
+function getValue(n) {
+    if (n === 0) {
+        return 8;
+    }
+
+    if (n === 1) {
+        return 12;
+    }
+
+    return 2*getValue(n-1) + 3*getValue(n-2);
+}
+
+console.log( getValue(5) );
