@@ -17,7 +17,7 @@ const animal = {
 
 rabbit.__proto__ = animal;
 
-console.log(rabbit.eats); // ?
+console.log(rabbit.eats); // true
 
 // Здесь мы можем сказать, что "animal является прототипом rabbit" или "rabbit прототипно наследует от animal".
 // Так что если у animal много полезных свойств и методов, то они автоматически становятся доступными у rabbit.
@@ -43,7 +43,8 @@ rabbit.walk = function () {
 };
 
 rabbit.walk(); // Rabbit! Bounce-bounce!
-longEar.walk(); // Animal walk
+longEar.walk(); // Rabbit! Bounce-bounce!
+animal.walk(); // Animal walk
 
 // Object.keys возвращает только собственные ключи
 console.log('keys for rabit:', Object.keys(rabbit)); // jumps, walk
