@@ -135,10 +135,12 @@ body
     color: #4A4A4A;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
 
     cursor: pointer;
+
+    overflow: hidden;
 }
 
 .tickets-switcher__item:hover:not(.tickets-switcher__item--active)
@@ -146,11 +148,19 @@ body
     background: rgba(33, 150, 243, .2);
 }
 
-.tickets-switcher__item--active
+.tickets-switcher__input:checked + .tickets-switcher__label
 {
     background: #2196F3;
     color: #FFFFFF;
     border-color: #2196F3;
+}
+
+.tickets-switcher__label
+{
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tickets-switcher__item:first-child

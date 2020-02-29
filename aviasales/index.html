@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test task for aviasales</title>
     <link rel="stylesheet" href="index.css">
+    <script defer src="data.js"></script>
+    <script defer src="lib.js"></script>
+    <script defer src="ticket.js"></script>
+    <script defer src="index.js"></script>
 </head>
 
 <body>
@@ -57,14 +61,16 @@
             </ul>
         </form>
         <form class="tickets-switcher">
-            <label class="tickets-switcher__item tickets-switcher__item--active">
+            <label class="tickets-switcher__item">
                 <input
                     class="tickets-switcher__input"
                     type="radio"
                     name="ticket-filtter"
                     value="cheap"
                     checked>
-                Самый дешевый
+                <span class="tickets-switcher__label">
+                    Самый дешевый
+                </span>
             </label>
             <label class="tickets-switcher__item">
                 <input
@@ -72,7 +78,9 @@
                     type="radio"
                     name="ticket-filtter"
                     value="speed">
-                Самый быстрый
+                <span class="tickets-switcher__label">
+                    Самый быстрый
+                </span>
             </label>
         </form>
         <ul class="tickets-list">
