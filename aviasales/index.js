@@ -1,6 +1,21 @@
-const $ticketsList = document.querySelector('.tickets-list');
+let appState = {
+    transplants: [1, 2, 0, 3],
+    sorting: 'speed'
+};
 
-renderTickets(tickets);
+const $ticketsList = document.querySelector('.tickets-list'),
+    transplantForm = new TransplantForm({
+        value: appState.transplants,
+        selector: '.transplant',
+        onChange
+    }),
+    sortForm = new SortForm({
+        value: appState.sorting,
+        selector: '.tickets-switcher',
+        onChange
+    });
+
+renderTickets(getTickets());
 
 function renderTickets(tickets) {
     $ticketsList.innerText = '';
@@ -17,4 +32,19 @@ function renderTicketListItem(ticket) {
     $el.append(renderTicket(ticket));
 
     return $el;
+}
+
+function getTickets() {
+    const ticketsForRender = getTicketsWithTransplants(tickets, appState.transplants);
+
+    return sort(ticketsForRender, appState.sorting);
+}
+
+function stateChange(data) {
+    appState = Object.assign(appState, data);
+}
+
+function onChange(data) {
+    stateChange(data);
+    renderTickets(getTickets());
 }

@@ -53,7 +53,7 @@ function getTicketsWithTransplants(tickets, transplants) {
 
         newTicket.segments = ticket.segments
             .filter(function(segment) {
-                return transplants.includes(segment.stops.length);
+                return transplants.length === 0 || transplants.includes(segment.stops.length);
             });
 
         return newTicket;

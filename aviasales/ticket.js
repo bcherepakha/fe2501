@@ -84,7 +84,7 @@ function renderTicket(ticket) {
             ${price} Р
         </div>
         <div class="ticket__avia-logo">
-            <img class="ticket__avia-logo-img" src="http://lorempixel.com/800/100" alt="${carrier}" />
+            <img class="ticket__avia-logo-img" src="//pics.avs.io/99/36/${carrier}.png" alt="${carrier}" />
         </div>
         <ul class="ticket__variants">
         </ul>
