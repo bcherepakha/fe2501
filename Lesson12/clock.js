@@ -5,6 +5,7 @@ export class Clock {
         this.timeOffset = props.timeOffset;
         this._$el = this.createClockElement();
         this.changeTime();
+        this.start();
 
         // return this;
     }

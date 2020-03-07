@@ -2,23 +2,40 @@ import {Clock} from './clock.js';
 import AddAlarmForm from './addAlarmForm.js';
 import {Alarm} from './alarm.js';
 
-const $app = document.querySelector('#app');
-const kievClock = new Clock({
+const $app = document.querySelector('#app'),
+    kievClock = new Clock({
         timeOffset: 0
-    });
-const addAlarmForm = new AddAlarmForm({
-    onSubmit: addAlarm
-});
-const alarms = [];
+    }),
+    addAlarmForm = new AddAlarmForm({
+        onSubmit: addAlarm,
+        songs: Alarm.SONGS
+    }),
+    alarms = [],
+    state = {};
 
 $app.append(
     kievClock.render(),
     addAlarmForm.render()
 );
 
+function addAlarm(props) {
+    const $alarm = new Alarm({
+            time: props.time,
+            song: props.song,
+            onAlarm,
+            beforeAlarm,
+            onCancel: onAlarm,
+            onPause: onAlarm
+        }),
+        hasEqualAlarm = alarms.some(function(alarm1) {
+            return Alarm.isEqual(alarm1, $alarm);
+        });
 
-function addAlarm(time) {
-    const $alarm = new Alarm({time, onAlarm});
+    if (hasEqualAlarm) {
+        console.log('Alarm already exist');
+
+        return ;
+    }
 
     alarms.push($alarm);
 
@@ -26,5 +43,15 @@ function addAlarm(time) {
 }
 
 function onAlarm(alarm) {
-    alarm.remove();
+    state.currentAlarm = null;
+}
+
+function beforeAlarm(alarm) {
+    if (state.currentAlarm) {
+        alarm.cancel();
+
+        return false;
+    }
+
+    state.currentAlarm = alarm;
 }
