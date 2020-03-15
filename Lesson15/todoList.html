@@ -6,7 +6,12 @@
     <meta name="description" content="Try to create app as http://todomvc.com/">
     <title>ToDo List</title>
     <link rel="stylesheet" href="./todoList.css">
-    <script defer src="./todoList.js"></script>
+    <script src="lib.js" defer type="module"></script>
+    <script src="filter.js" defer type="module"></script>
+    <script defer src="task.js" type="module"></script>
+    <script defer src="taskList.js" type="module"></script>
+    <script defer src="addTaskForm.js" type="module"></script>
+    <script defer src="app.js" type="module"></script>
 </head>
 <body>
     <section class="todoapp">
@@ -26,6 +31,7 @@
                 autofocus=""
                 name="task"
                 aria-label="What needs to be done?">
+            <button class="visually-hidden" type="submit">Добавить</button>
         </form>
         <section class="main">
             <ul class="todo-list">
@@ -35,7 +41,12 @@
                         <span>1</span>
                         <button class="destroy"></button>
                     </div>
-                    <input class="edit" value="1">
+                    <form>
+                        <input class="edit" value="1">
+                        <button class="visually-hidden" type="submit">
+                            Изменить
+                        </button>
+                    </form>
                 </li>
                 <li class="editing">
                     <div class="view">

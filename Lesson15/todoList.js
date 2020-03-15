@@ -2,7 +2,6 @@ const {hash} = location,
     $filters = document.querySelectorAll('.filters a');
 
 $filters.forEach(function($link) {
-    console.dir($link);
     if ($link.hash === hash || (hash === '' && $link.hash === '#/all') ) {
         $link.classList.add('selected');
     } else {
@@ -81,3 +80,5 @@ function getTaskURL() {
 
     return taskLink;
 }
+
+// https://www.mockapi.io/projects/5d9969125641430014051851
